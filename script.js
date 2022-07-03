@@ -1,10 +1,61 @@
-const container = document.querySelector(".container")
+function clearGrid() {
+    const pixels = document.querySelectorAll(".pixel");
 
-for (let i = 0; i < 16; i++){
-    for (let j = 0; j < 16; j++){
-        const pixel = document.createElement('div');
+    pixels.forEach((pixel) => {
+        pixel.remove();
+    })
+}
 
-        pixel.classList.add(i*j)
-        container.appendChild(pixel);
+const container = document.querySelector(".gridcontainer");
+
+function fillGrid(gridSize) {
+    const pixSize = 512/gridSize;
+
+    for (let i = 0; i < gridSize; i++){
+        for (let j = 0; j < gridSize; j++){
+            const pixel = document.createElement('div');
+    
+            pixel.classList.add('pixel');
+            pixel.style.width = `${pixSize}px`;
+            pixel.style.height = `${pixSize}px`;
+    
+            container.appendChild(pixel);
+        }
     }
+}
+
+
+//Initial grid creation
+fillGrid(16)
+setupGrid();
+
+//Effect of slider bar
+var slider = document.getElementById("slider");
+const outputs = document.querySelectorAll(".value");
+
+outputs.forEach((output) => {
+    output.innerHTML = slider.value;
+})
+
+slider.oninput = function() {
+    outputs.forEach((output) => {
+        output.innerHTML = this.value;
+    })
+}
+
+slider.onchange = function() {
+    clearGrid();
+    fillGrid(this.value);
+    setupGrid();
+}
+
+//Event listener to paint squares
+function setupGrid() {
+    const pixels = document.querySelectorAll(".pixel");
+
+    pixels.forEach((pixel) => {
+        pixel.addEventListener("mouseenter", function (e) {
+            pixel.classList.add("paint");
+        })
+    })
 }

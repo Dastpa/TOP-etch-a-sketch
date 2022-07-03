@@ -30,7 +30,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100px;
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(236, 236, 236);
 }
 
 .title {
@@ -38,19 +38,25 @@ body {
     font-size: 30px;
 }
 
-.content {
+.main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(240, 240, 240);
     height: calc(100vh - 150px);
 }
 
-.container {
+.gridcontainer {
     border: 1px black solid;
     height: 512px;
     width: 512px;
     display: flex;
+    flex-wrap: wrap;
+}
+
+.slidecontainer {
+    display: flex;
+    flex-direction: column;
 }
 
 .footer {
@@ -60,5 +66,13 @@ body {
     font-family: 'roboto-bold';
     font-weight: bold;
     height: 50px;
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(236, 236, 236);
+}
+
+.pixel {
+    
+}
+
+.paint {
+    background-color: red;
 }
