@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-Sketch</title>
-    <script src="/script.js" defer></script>
+    <script src="/Coloris-main/coloris.min.js" defer></script>
     <link rel="stylesheet" href="/styles.css">
+    <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="Coloris-main/coloris.min.css" />
+    
 </head>
 <body>
     <div class="header">
@@ -14,12 +17,18 @@
     </div>
     <div class="main">
         <div class="container">
-            <div class="slidecontainer">
-                <input id="slider" type="range" min="8" max="64" value="16">
-                <p><span class="value"></span>x<span class="value"></span></p>
-            </div>
             <div class="gridcontainer">
             
+            </div>
+            <div class="optionscontainer">
+                <div class="slidecontainer">
+                    <p class="gridsize"><span class="value"></span>x<span class="value"></span></p>
+                    <input id="slider" type="range" min="8" max="64" value="16">
+                </div>
+                <div class="buttons">
+                    <input type="color" data-coloris />
+                    <button class="erase">Erase!</button>
+                </div>
             </div>
         </div>
     </div>

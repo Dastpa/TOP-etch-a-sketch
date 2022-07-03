@@ -49,6 +49,11 @@ slider.onchange = function() {
     setupGrid();
 }
 
+Coloris({
+    theme: 'large',
+    themeMode: 'light', // light, dark, auto
+  });
+
 //Event listener to paint squares
 function setupGrid() {
     const pixels = document.querySelectorAll(".pixel");

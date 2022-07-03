@@ -54,9 +54,37 @@ body {
     flex-wrap: wrap;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.optionscontainer {
+    display: flex;
+    padding: 8px 12px;
+    background-color: rgb(230, 230, 230);
+    border-radius: 5px;
+}
+
+.buttons {
+    margin-left: auto;
+    align-self: center;
+}
+
+.erase {
+    
+}
+
 .slidecontainer {
     display: flex;
     flex-direction: column;
+}
+
+.gridsize {
+    font-weight: bold;
+    margin: 0;
 }
 
 .footer {
@@ -67,10 +95,6 @@ body {
     font-weight: bold;
     height: 50px;
     background-color: rgb(236, 236, 236);
-}
-
-.pixel {
-    
 }
 
 .paint {
